@@ -1,14 +1,19 @@
+const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
 const PORT = 4000;
 
-app.use(cors());
+app.use(cors({ origin: true }));
 
-app.listen(PORT, () => {
-  console.log(`Server Works !!! At port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server Works !!! At port ${PORT}`);
+// });
+
+// app.get('*', (req, res) => {
+//   res.send('Hello from the API');
+// });
 
 app.get('/validateUrl', async (req, res, next) => {
   try {
@@ -53,3 +58,5 @@ app.get('/downloadmp4', async (req, res, next) => {
     console.error(err);
   }
 });
+
+exports.api = functions.https.onRequest(app);

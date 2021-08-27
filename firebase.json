@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "site": "yodatube",
+    "public": "client",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/api",
+      "function": "api"
+    },
+    {
+      "source": "/validateUrl",
+      "function": "api"
+    },
+    {
+      "source": "/downloadmp3",
+      "function": "api"
+    },
+    {
+      "source": "/downloadmp4",
+      "function": "api"
+    }
+  ]
+}

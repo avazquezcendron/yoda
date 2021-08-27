@@ -1,7 +1,7 @@
 let Btn = document.getElementById('btn');
 let URLinput = document.querySelector('.URL-input');
 let select = document.querySelector('.opt');
-let serverURL = 'http://localhost:4000';
+let serverURL = 'https://us-central1-aonikenk-dev.cloudfunctions.net/api';
 
 Btn.addEventListener('click', () => {
   Btn.disabled = true;
